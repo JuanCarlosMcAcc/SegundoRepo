@@ -19,8 +19,25 @@ pipeline {
         sh 'pwd'
         echo 'Prueba stage Fluffy finalizado'
         echo 'Stage finalizado'
-
       }
+    }
+    stage("A"){
+        steps{
+            echo "Prueba de cambio para trigger automatico"
+        }
+        post{
+            always{
+                echo "====++++always++++===="
+            }
+            success{
+                echo "====++++El commit se ha ejecutado y el trigger tambien++++===="
+            }
+            failure{
+                echo "====++++A execution failed++++===="
+            }
+    
+        }
     }
   }
 }
+
