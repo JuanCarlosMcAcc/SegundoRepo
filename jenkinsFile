@@ -17,6 +17,8 @@ pipeline {
       steps {
         echo 'Placeholder'
         echo 'Prueba stage Fluffy finalizado'
+        echo 'Stage finalizado'
+
       }
     }
   }
