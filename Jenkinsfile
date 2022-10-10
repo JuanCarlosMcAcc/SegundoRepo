@@ -21,7 +21,7 @@ pipeline {
         echo 'Stage finalizado'
       }
     }
-    stage("A"){
+    stage("Stage de build remoto"){
         steps{
             echo "Prueba de cambio para trigger automatico"
         }
