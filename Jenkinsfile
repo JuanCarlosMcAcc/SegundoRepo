@@ -17,7 +17,7 @@ pipeline {
       steps {
         echo 'Placeholder'
         sh 'pwd'
-        sh 'echo "Esto es una prueba para almacenar en el fichero" > fichero1.txt'
+        echo "Esto es una prueba para almacenar en el fichero" >> fichero1.txt
         sh 'ls'
         sh 'cat fichero.txt'
         echo 'Prueba stage Fluffy finalizado'
