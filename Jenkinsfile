@@ -19,7 +19,7 @@ pipeline {
         sh 'pwd'
 //        cat 'Esto es una prueba para almacenar en el fichero' > fichero1.txt
         sh 'ls'
-        sh 'cat "Prueba" > fichero.txt'
+        sh 'echo "Prueba" > fichero.txt'
         echo 'Prueba stage Fluffy finalizado'
         echo 'Stage finalizado'
       }
