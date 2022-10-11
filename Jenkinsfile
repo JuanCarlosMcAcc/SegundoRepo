@@ -40,4 +40,5 @@ pipeline {
             echo "====++++A execution failed++++===="
         }
     }
+  }
 }
