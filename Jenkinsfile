@@ -20,6 +20,7 @@ pipeline {
 //        cat 'Esto es una prueba para almacenar en el fichero' > fichero1.txt
         sh 'ls'
         sh 'echo "Prueba" > fichero.txt'
+        sh 'cat ficherto.txt'
         echo 'Prueba stage Fluffy finalizado'
         echo 'Stage finalizado'
       }
