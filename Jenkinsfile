@@ -34,7 +34,7 @@ pipeline {
         success{
             emailext body: 'Test Message',
             subject: 'Test Subject',
-            to: 'jcmoratalla@devcenter.com'
+            to: 'jcmoratalla@devcenter.es'
         }
         failure{
             echo "====++++A execution failed++++===="
