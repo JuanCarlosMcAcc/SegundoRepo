@@ -36,11 +36,9 @@ pipeline {
                 echo "====++++always++++===="
             }
             success{
-                emailext (
-                  subject: "Build exitosa",
-                  to: "jcmoratalla@devcenter.es" ,
-                  body: "La build ha sido completada con exito",
-                )
+                emailext body: 'Test Message',
+                subject: 'Test Subject',
+                to: 'jcmoratalla@devcenter.com'
             }
             failure{
                 echo "====++++A execution failed++++===="
