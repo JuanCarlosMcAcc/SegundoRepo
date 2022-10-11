@@ -29,7 +29,7 @@ pipeline {
     }
     stage("Stage de build remoto"){
         steps{
-            echo "Prueba de cambio para trigger automatico"
+            echo "Prueba de cambio para trigger automatico hooks"
         }
         post{
             always{
