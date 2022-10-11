@@ -39,8 +39,7 @@ pipeline {
                 emailext (
                   subject: "Build exitosa",
                   to: "jcmoratalla@devcenter.es" ,
-                  body: "La build ha sido completada con exito"
-
+                  body: "La build ha sido completada con exito",
                 )
             }
             failure{
