@@ -27,24 +27,20 @@ pipeline {
         echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE"
       }
     }
-    stage("Stage de build remoto"){
-        steps{
-            echo "Prueba de cambio para trigger automatico hooks"
+    post{
+        always{
+            echo "====++++always++++===="
         }
-        post{
-            always{
-                echo "====++++always++++===="
-            }
-            success{
-                emailext body: 'Test Message',
-                subject: 'Test Subject',
-                to: 'jcmoratalla@devcenter.es'
-            }
-            failure{
-                echo "====++++A execution failed++++===="
-            }
-    
+        success{
+            emailext body: 'Test Message',
+            subject: 'Test Subject',
+            to: 'jcmoratalla@devcenter.es'
         }
+        failure{
+            echo "====++++A execution failed++++===="
+        }
+
     }
+
   }
 }
