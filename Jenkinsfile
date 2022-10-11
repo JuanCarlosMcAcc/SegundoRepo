@@ -36,7 +36,12 @@ pipeline {
                 echo "====++++always++++===="
             }
             success{
-                echo "====++++El commit se ha ejecutado y el trigger tambien++++===="
+                emailext (
+                  subject: "Build exitosa",
+                  to: "jcmoratalla@devcenter.es" ,
+                  body: "La build ha sido completada con exito"
+
+                )
             }
             failure{
                 echo "====++++A execution failed++++===="
