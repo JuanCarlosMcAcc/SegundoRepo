@@ -17,14 +17,14 @@ pipeline {
       steps {
         echo 'Placeholder'
         sh 'pwd'
-//        cat 'Esto es una prueba para almacenar en el fichero' > fichero1.txt
         sh 'ls'
         sh 'echo "Prueba" > fichero.txt'
         echo '----------------------------'
         sh 'cat fichero.txt'
         sh 'ls'
-        echo 'Prueba stage Fluffy finalizado'
+        echo 'Fichero creado con exito'
         echo 'Stage finalizado'
+        echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE"
       }
     }
     stage("Stage de build remoto"){
