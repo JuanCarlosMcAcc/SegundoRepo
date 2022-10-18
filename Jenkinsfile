@@ -32,11 +32,12 @@ pipeline {
   post{
       always{
           echo "====++++always++++===="
-      }
-      success{
           mail to: 'jcmoratalla@devcenter.es',
           subject: 'Test Subject',
           body: 'Test Message from Jenkins'
+      }
+      success{
+          echo "====++++success++++===="
       }
       failure{
           echo "====++++A execution failed++++===="
