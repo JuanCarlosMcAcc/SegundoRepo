@@ -34,9 +34,9 @@ pipeline {
           echo "====++++always++++===="
       }
       success{
-          emailext body: 'Test Message',
+          mail to: 'jcmoratalla@devcenter.es',
           subject: 'Test Subject',
-          to: 'jcmoratalla@devcenter.es'
+          body: 'Test Message from Jenkins'
       }
       failure{
           echo "====++++A execution failed++++===="
