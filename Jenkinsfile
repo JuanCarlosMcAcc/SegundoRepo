@@ -34,7 +34,7 @@ pipeline {
           echo "====++++always++++====",
           subject: "Test Subject",
           body: "Test Message from Jenkins"          
-          to: "jcmoratalla@devcenter.es",
+          to: "jcmoratalla@devcenter.es"
       }
       success{
           echo "====++++success++++===="
