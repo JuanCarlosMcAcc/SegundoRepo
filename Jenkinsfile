@@ -24,7 +24,7 @@ pipeline {
         sh 'ls'
         echo 'Fichero creado con exito'
         echo '_______Stage finalizado_______'
-        echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE"
+        echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE___"
       }
     }
   }  
