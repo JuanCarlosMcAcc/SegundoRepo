@@ -23,7 +23,7 @@ pipeline {
         sh 'cat fichero.txt'
         sh 'ls'
         echo 'Fichero creado con exito'
-        echo 'Stage finalizado'
+        echo '_______Stage finalizado_______'
         echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE"
       }
     }
