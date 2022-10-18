@@ -32,7 +32,7 @@ pipeline {
   post{
       always{
           echo "====++++always++++===="
-          mail to: 'jcmoratalla@devcenter.es',
+          to: 'jcmoratalla@devcenter.es',
           subject: 'Test Subject',
           body: 'Test Message from Jenkins'
       }
