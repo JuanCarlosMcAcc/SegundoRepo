@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo 'Placeholder'
         sh 'echo Edited Placeholder.'
+        echo "====++++  El valor de la variable es ${NOMBRE}  ++++===="
       }
     }
     stage('Fluffy Test') {
@@ -33,13 +34,18 @@ pipeline {
       }
     }
 
+  }
+
+  environment{
+    NOMBRE = 'Juan Carlos'
   }  
   
   post{
       always{
-        emailext body: 'Test Message',
-            subject: 'Test Subject',
-            to: 'j.moratalla.campello@accenture.com'
+        echo "====++++SIEMPRE SE EJECUTA ESA SECCION DEL POST++++===="
+        // emailext body: 'Test Message',
+        //     subject: 'Test Subject',
+        //     to: 'j.moratalla.campello@accenture.com'
       } 
       }
       success{
