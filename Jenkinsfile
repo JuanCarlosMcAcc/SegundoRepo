@@ -32,9 +32,9 @@ pipeline {
   post{
       always{
           emailext { 
-            body: "Test Message",
-            subject: "Test Subject",
-            to: "jcmoratalla@devcenter.es"
+            body: 'Test Message',
+            subject: 'Test Subject',
+            to: 'jcmoratalla@devcenter.es'
           }
       }
       success{
