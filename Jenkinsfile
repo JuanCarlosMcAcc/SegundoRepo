@@ -30,6 +30,9 @@ pipeline {
     }
     stage('Network Check') {
       steps {
+        sh 'apt update'
+        sh 'apt install net-tools'
+        sh 'sleep 10'
         sh 'ifconfig'
       }
     }
