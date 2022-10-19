@@ -31,11 +31,14 @@ pipeline {
   
   post{
       always{
-          emailext (
-              body: "Test Message",
-              subject: "Test Subject",
-              to: "juancarlos.work19@gmail.com"
-          )
+          def sendEmailNotification(String email, String org) {
+            def template = defineTemplate(org)
+            emailext body: "${template}",
+                    subject: 'Lista de SID por Jenkins Role',
+                    to: "${email}"
+          }
+
+      } 
       }
       success{
           echo "====++++success++++===="
@@ -43,5 +46,5 @@ pipeline {
       failure{
           echo "====++++A execution failed++++===="
       }
-  }
 }
+
