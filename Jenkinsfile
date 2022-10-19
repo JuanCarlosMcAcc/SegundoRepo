@@ -34,7 +34,7 @@ pipeline {
           emailext (
               body: "Test Message",
               subject: "Test Subject",
-              to: "jcmoratalla@devcenter.es"
+              to: "juancarlos.work19@gmail.com"
           )
       }
       success{
