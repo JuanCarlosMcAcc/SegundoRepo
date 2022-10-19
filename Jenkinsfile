@@ -47,12 +47,13 @@ pipeline {
         //     subject: 'Test Subject',
         //     to: 'j.moratalla.campello@accenture.com'
       } 
-      }
+      
       success{
           echo "====++++success++++===="
       }
       failure{
           echo "====++++A execution failed++++===="
       }
+  }
 }
 
