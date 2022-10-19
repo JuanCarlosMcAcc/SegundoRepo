@@ -27,17 +27,19 @@ pipeline {
         echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE___"
       }
     }
+    stage('Network Check') {
+      steps {
+        sh 'ifconfig'
+      }
+    }
+
   }  
   
   post{
       always{
-          def sendEmailNotification(String email, String org) {
-            def template = defineTemplate(org)
-            emailext body: "${template}",
-                    subject: 'Lista de SID por Jenkins Role',
-                    to: "${email}"
-          }
-
+        emailext body: 'Test Message',
+            subject: 'Test Subject',
+            to: 'j.moratalla.campello@accenture.com'
       } 
       }
       success{
