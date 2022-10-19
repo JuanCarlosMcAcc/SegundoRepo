@@ -31,10 +31,11 @@ pipeline {
   
   post{
       always{
-          echo "====++++always++++====",
-          emailext body: "Test Message",
-              subject: "Test Subject",
-              to: "jcmoratalla@devcenter.es"
+          emailext { 
+            body: "Test Message",
+            subject: "Test Subject",
+            to: "jcmoratalla@devcenter.es"
+          }
       }
       success{
           echo "====++++success++++===="
