@@ -32,8 +32,13 @@ pipeline {
       parallel {
         stage('Backend') {
           steps {
-            sh './jenkins/test-backend.sh'
-            junit 'target/surefire-reports/**/TEST*.xml'
+            sh 'cd /home/jenkins/agent/workspace/Formacion/Juan Carlos/pipeline-github/'
+            sh '--------------------'
+            sh 'pwd'
+            sh 'sleep 5'
+            sh '--------------------'
+            sh 'mkdir /home/jenkins/agent/workspace/Formacion/Juan Carlos/pipeline-github/${MI_CARPETA}'
+            sh 'ls'
           }
         }
         stage('Frontend') {
@@ -59,6 +64,7 @@ pipeline {
 
   environment{
     NOMBRE = 'Juan Carlos'
+    MI_CARPETA = 'CarpetaJC'
   }  
   
   post{
