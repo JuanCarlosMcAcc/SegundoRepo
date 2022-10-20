@@ -32,7 +32,7 @@ pipeline {
       parallel {
         stage('Backend') {
           steps {
-            sh 'cd /home/jenkins/agent/workspace/Formacion/Juan Carlos/pipeline-github/'
+            sh 'cd /home/jenkins/agent/workspace/Formacion/${NOMBRE}/pipeline-github'
             sh '--------------------'
             sh 'pwd'
             sh 'sleep 5'
