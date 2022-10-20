@@ -28,11 +28,30 @@ pipeline {
         echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE___"
       }
     }
-    stage('Network Check') {
-      steps {
-        sh 'apt install net-tools'
-        sh 'sleep 10'
-        sh 'ifconfig'
+    stage('Stage Paralelo') {
+      parallel {
+        stage('Backend') {
+          steps {
+            sh './jenkins/test-backend.sh'
+            junit 'target/surefire-reports/**/TEST*.xml'
+          }
+        }
+        stage('Frontend') {
+          steps {
+            sh './jenkins/test-frontend.sh'
+            junit 'target/test-results/**/TEST*.xml'
+          }
+        }
+        stage('Performance') {
+          steps {
+            sh './jenkins/test-performance.sh'
+          }
+        }
+        stage('Static') {
+          steps {
+            sh './jenkins/test-static.sh'
+          }
+        }
       }
     }
 
