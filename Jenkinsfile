@@ -32,6 +32,8 @@ pipeline {
       parallel {
         stage('Backend') {
           steps {
+            sh 'ls'
+            sh 'sleep 5'
             sh 'cd /home/jenkins/agent/workspace/Formacion/${NOMBRE}/pipeline-github'
             sh '--------------------'
             sh 'pwd'
