@@ -34,6 +34,8 @@ pipeline {
           steps {
             sh 'ls'
             sh 'sleep 5'
+            sh 'pwd'
+            sh 'sleep 3'
             sh 'cd /home/jenkins/agent/workspace/Formacion/${NOMBRE}/pipeline-github'
             sh '--------------------'
             sh 'pwd'
