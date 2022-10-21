@@ -36,12 +36,12 @@ pipeline {
             sh 'sleep 5'
             sh 'pwd'
             sh 'sleep 3'
-            sh 'cd /home/jenkins/agent/workspace/Formacion/${NOMBRE}/pipeline-github'
+            // sh 'cd /home/jenkins/agent/workspace/Formacion/${NOMBRE}/pipeline-github'
             sh '--------------------'
             sh 'pwd'
             sh 'sleep 5'
             sh '--------------------'
-            sh 'mkdir /home/jenkins/agent/workspace/Formacion/Juan Carlos/pipeline-github/${MI_CARPETA}'
+            sh 'mkdir ${MI_CARPETA}'
             sh 'ls'
           }
         }
