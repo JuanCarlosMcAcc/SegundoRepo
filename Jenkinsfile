@@ -39,7 +39,7 @@ pipeline {
             echo '--------------------'
             sh 'pwd'
             sh 'sleep 5'
-            sh '--------------------'
+            echo '--------------------'
             sh 'mkdir ${MI_CARPETA}'
             sh 'ls'
           }
