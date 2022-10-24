@@ -64,7 +64,7 @@ pipeline {
           steps {
             echo '--------------------'
             echo 'Stage Static Paralelo'
-            echo '--------------------'
+            echo '-------------------- '
           }
         }
       }
