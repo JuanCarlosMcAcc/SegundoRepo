@@ -46,18 +46,24 @@ pipeline {
         }
         stage('Frontend') {
           steps {
-            sh './jenkins/test-frontend.sh'
-            junit 'target/test-results/**/TEST*.xml'
+            echo '--------------------'
+            echo 'Stage Frontend Paralelo'
+            echo 'La carpeta creada en el anterior Stage se llama ${MI_CARPETA}'
+            echo '--------------------'
           }
         }
         stage('Performance') {
           steps {
-            sh './jenkins/test-performance.sh'
+            echo '--------------------'
+            echo 'Stage Performance Paralelo'
+            echo '--------------------'
           }
         }
         stage('Static') {
           steps {
-            sh './jenkins/test-static.sh'
+            echo '--------------------'
+            echo 'Stage Static Paralelo'
+            echo '--------------------'
           }
         }
       }
