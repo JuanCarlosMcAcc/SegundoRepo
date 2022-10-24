@@ -26,6 +26,7 @@ pipeline {
         echo 'Fichero creado con exito'
         echo '_______Stage finalizado_______'
         echo "BUILD TRIGGER FUNCIONA CORRECTAMENTE___"
+        echo '----------------------------'
       }
     }
     stage('Stage Paralelo') {
