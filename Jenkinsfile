@@ -50,6 +50,7 @@ pipeline {
             echo 'Stage Frontend Paralelo'
             echo 'La carpeta creada en el anterior Stage se llama ${MI_CARPETA}'
             echo '--------------------'
+            echo '--------------------'
           }
         }
         stage('Performance') {
