@@ -6,7 +6,7 @@ pipeline {
             steps {
               // HelloWorldSimple(name : 'JuanCarlos__', apellido : '', segundo_apellido: '')
               HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
-              // HelloWorldSimple.funcion2('HOLA SOY EL PARAMETRO')
+              HelloWorldSimple('HOLA SOY EL PARAMETRO')
             }
         }
     }
