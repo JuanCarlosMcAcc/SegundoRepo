@@ -5,8 +5,8 @@ pipeline {
         stage('verify') {
             steps {
               // HelloWorldSimple(name : 'JuanCarlos__', apellido : '', segundo_apellido: '')
-              HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
               HelloWorldSimple('HOLA SOY EL PARAMETRO')
+              HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
             }
         }
     }
