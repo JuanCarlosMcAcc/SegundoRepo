@@ -7,6 +7,7 @@ pipeline {
               // HelloWorldSimple(name : 'JuanCarlos__', apellido : '', segundo_apellido: '')
               HelloWorldSimple('HOLA SOY EL PARAMETRO')
               HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
+              HelloWorldSimple(1)
             }
         }
     }
