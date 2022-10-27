@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('verify') {
             steps {
-                helloWorld(name: 'fred')
+                HelloWorldSimple(name: 'fred')
             }
         }
     }
