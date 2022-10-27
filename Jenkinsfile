@@ -15,6 +15,18 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            echo "====++++always++++===="
+        }
+        success{
+            echo "====++++only when successful++++===="
+            postBuildSuccess(stashName: "Java 7")
+        }
+        failure{
+            echo "====++++only when failed++++===="
+        }
+    }
 }
 
 
