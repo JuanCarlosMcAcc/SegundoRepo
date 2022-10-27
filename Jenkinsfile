@@ -1,10 +1,10 @@
-@Library('libreria-jc') _
+@Library('libreria-jc@main') _
 pipeline {
     agent any
     stages {
         stage('verify') {
             steps {
-                HelloWorldSimple(name: 'fred')
+              HelloWorldSimple(name: 'JuanCarlos')
             }
         }
     }
