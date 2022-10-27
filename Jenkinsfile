@@ -14,7 +14,9 @@ pipeline {
               helloWorld(name: "Juan Carlos", dayOfWeek: "Viernes")
               sh "pwd"
               sh "ls"
-              
+              sh "cd ./home/jenkins"
+              sh "pwd"
+
             }
         }
     }
