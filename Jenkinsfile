@@ -8,6 +8,10 @@ pipeline {
               HelloWorldSimple('HOLA SOY EL PARAMETRO')
               HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
               HelloWorldSimple(1)
+              echo "-------------------------------"
+              echo "Numero de build --->  $env.BUILD_NUMBER"
+              echo "-------------------------------"
+              helloWorld(name: "Juan Carlos", dayOfWeek: "Viernes")
             }
         }
     }
