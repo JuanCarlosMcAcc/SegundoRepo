@@ -1,6 +1,6 @@
 @Library('libreria-jc') _
 pipeline {
-    agent { label 'java' }
+    agent any
     stages {
         stage('verify') {
             steps {
