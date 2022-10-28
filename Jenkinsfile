@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Read File') {
             steps {
-                script{ data = readYaml( file: 'release.yaml' ) }
+                script{ data = readYaml( file: 'release.yml' ) }
                 echo data.ear_file.deploy.toString()
             }
         }
