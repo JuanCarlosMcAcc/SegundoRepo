@@ -5,17 +5,23 @@ pipeline {
         stage('verify') {
             steps {
               // HelloWorldSimple(name : 'JuanCarlos__', apellido : '', segundo_apellido: '')
-              HelloWorldSimple('HOLA SOY EL PARAMETRO')
-              HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
-              HelloWorldSimple(1)
-              echo "-------------------------------"
-              echo "Numero de build --->  $env.BUILD_NUMBER"
-              echo "-------------------------------"
-              helloWorld(name: "Juan Carlos", dayOfWeek: "Viernes")
-              sh "pwd"
-              sh "ls"
-              sh "cat hello_world.txt"
-              sh "pwd"
+                HelloWorldSimple('HOLA SOY EL PARAMETRO')
+                HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
+                HelloWorldSimple(1)
+                echo "-------------------------------"
+                echo "Numero de build --->  $env.BUILD_NUMBER"
+                echo "-------------------------------"
+                helloWorld(name: "Juan Carlos", dayOfWeek: "Viernes")
+                sh "pwd"
+                sh "ls"
+                sh "cat hello_world.txt"
+                sh "pwd"
+            }
+        }
+        stage('Read File') {
+            steps {
+                script{ data = readYaml( file: 'release.yaml' ) }
+                echo data.ear_file.deploy.toString()
             }
         }
     }
