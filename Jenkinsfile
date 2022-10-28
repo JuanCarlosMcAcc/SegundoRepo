@@ -25,10 +25,16 @@ pipeline {
                 --
                 --
                 --"""
-                sh "grep 0.0.5 release.yml"
+                sh "grep ${VERSION} release.yml"
             }
         }
     }
+
+    environment{
+        NOMBRE = 'Juan Carlos'
+        MI_CARPETA = 'CarpetaJC'
+        VERSION = '0.0.5'
+    }  
     post{
         always{
             echo "====++++always++++===="
