@@ -21,6 +21,11 @@ pipeline {
         stage('Read File') {
             steps {
                 sh "cat release.yml"
+                echo """--
+                --
+                --
+                --"""
+                sh "grep 0.0.5 release.yml"
             }
         }
     }
