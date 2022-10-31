@@ -4,6 +4,7 @@ pipeline {
         environment{
             NOMBRE = 'Juan Carlos'
             MI_CARPETA = 'CarpetaJC'
+            VERSION = 'INT'
         }  
         stages {
             stage('verify') {
