@@ -51,13 +51,14 @@ pipeline {
                                 }
                             }
                         }
+                        switchCaseVersion(ENTORNO)
                     }
-                    switchCaseVersion(ENTORNO)
+                    
                 }
-            }
-            
         }
+            
     }
+
 
     post{
         always{
