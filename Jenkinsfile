@@ -2,10 +2,10 @@
 pipeline {
     agent any
     environment{
-        NOMBRE = 'Juan Carlos'
-        MI_CARPETA = 'CarpetaJC'
-        VERSION = '0.0.5'
-        ENTORNO = 'INT'
+        env.NOMBRE = 'Juan Carlos'
+        env.MI_CARPETA = 'CarpetaJC'
+        env.VERSION = '0.0.5'
+        env.ENTORNO = 'INT'
     }  
     stages {
         stage('verify') {
@@ -32,13 +32,13 @@ pipeline {
                 --
                 --"""
                 echo "La version utilizada es : "
-                sh "grep ${VERSION} release.yml"
+                sh ("grep ${VERSION} release.yml")
             }
         }
         stage('Read File Libreria') {
             steps {
                 echo "Llamada librería"
-                switchCaseVersion($ENTORNO)
+                switchCaseVersion(env.ENTORNO)
             }
         }
     }
