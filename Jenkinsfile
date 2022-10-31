@@ -39,15 +39,15 @@ pipeline {
                     ENTORNO = " "
                 }
                 steps { 
-                        // script{
-                        // ENTORNO = "INT"
-                        echo "Llamada librería..."
-                        ENTORNO = inputEnv()
-                        // ENTORNO = "INT"
-                        switchCaseVersion(ENTORNO)
-                        // }
-                    }
+                    // script{
+                    // ENTORNO = "INT"
+                    echo "Llamada librería..."
+                    
+                    // ENTORNO = "INT"
+                    switchCaseVersion(inputEnv())
+                    // }
                 }
+            }
         }
     }
 
