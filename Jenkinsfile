@@ -4,7 +4,6 @@ pipeline {
         environment{
             NOMBRE = 'Juan Carlos'
             MI_CARPETA = 'CarpetaJC'
-            ENTORNO = 'INT'
         }  
         stages {
             stage('verify') {
@@ -35,6 +34,9 @@ pipeline {
                 }
             }
             stage('Read File Libreria') {
+                environment {
+                    ENTORNO = ''
+                }
                 steps {
                     echo "Llamada librería"
                     catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', catchInterruptions: true) {
