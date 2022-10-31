@@ -4,7 +4,6 @@ pipeline {
     environment{
         NOMBRE = 'Juan Carlos'
         MI_CARPETA = 'CarpetaJC'
-        VERSION = '0.0.5'
         ENTORNO = 'INT'
     }  
     stages {
@@ -38,9 +37,25 @@ pipeline {
         stage('Read File Libreria') {
             steps {
                 echo "Llamada librería"
+                catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', catchInterruptions: true) {
+                timeout(time: 2, unit: 'MINUTES') {
+                    ENTORNO = input(message: 'Elige el entorno',
+                        parameters: [
+                        [$class : 'ChoiceParameterDefinition',
+                        choices: ['INT', 'PRE', 'PRO'].join('\n'),
+                        name   : 'Please, choose selection']
+                    ])
+                }
                 switchCaseVersion(ENTORNO)
             }
         }
+        stage("Message"){
+            steps{
+
+            }
+
+        }
+        
     }
 
 
