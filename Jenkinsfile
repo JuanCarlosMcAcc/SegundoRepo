@@ -1,6 +1,12 @@
 @Library('libreria-jc@main') _
 pipeline {
     agent any
+    environment{
+        NOMBRE = 'Juan Carlos'
+        MI_CARPETA = 'CarpetaJC'
+        VERSION = '0.0.5'
+        ENTORNO = 'INT'
+    }  
     stages {
         stage('verify') {
             steps {
@@ -32,17 +38,12 @@ pipeline {
         stage('Read File Libreria') {
             steps {
                 echo "Llamada librería"
-                switchCaseVersion($VERSION)
-                echo "Hello :D"
+                switchCaseVersion($ENTORNO)
             }
         }
     }
 
-    environment{
-        NOMBRE = 'Juan Carlos'
-        MI_CARPETA = 'CarpetaJC'
-        VERSION = '0.0.5'
-    }  
+
     post{
         always{
             echo "====++++always++++===="
