@@ -1,57 +1,57 @@
 @Library('libreria-jc@main') _
 pipeline {
-    agent any
-    environment{
-        NOMBRE = 'Juan Carlos'
-        MI_CARPETA = 'CarpetaJC'
-        ENTORNO = 'INT'
-    }  
-    stages {
-        stage('verify') {
-            steps {
-              // HelloWorldSimple(name : 'JuanCarlos__', apellido : '', segundo_apellido: '')
-                HelloWorldSimple('HOLA SOY EL PARAMETRO')
-                HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
-                HelloWorldSimple(1)
-                echo "-------------------------------"
-                echo "Numero de build --->  $env.BUILD_NUMBER"
-                echo "-------------------------------"
-                helloWorld(name: "Juan Carlos", dayOfWeek: "Viernes")
-                sh "pwd"
-                sh "ls"
-                sh "cat hello_world.txt"
-                sh "pwd"
-            }
-        }
-        stage('Read File') {
-            steps {
-                sh "cat release.yml"
-                echo """--
-                --
-                --
-                --"""
-                echo "La version utilizada es : "
-                sh ("grep ${VERSION} release.yml")
-            }
-        }
-        stage('Read File Libreria') {
-            steps {
-                echo "Llamada librería"
-                catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', catchInterruptions: true) {
-                timeout(time: 2, unit: 'MINUTES') {
-                    ENTORNO = input(message: 'Elige el entorno',
-                        parameters: [
-                        [$class : 'ChoiceParameterDefinition',
-                        choices: ['INT', 'PRE', 'PRO'].join('\n'),
-                        name   : 'Please, choose selection']
-                    ])
+        agent any
+        environment{
+            NOMBRE = 'Juan Carlos'
+            MI_CARPETA = 'CarpetaJC'
+            ENTORNO = 'INT'
+        }  
+        stages {
+            stage('verify') {
+                steps {
+                // HelloWorldSimple(name : 'JuanCarlos__', apellido : '', segundo_apellido: '')
+                    HelloWorldSimple('HOLA SOY EL PARAMETRO')
+                    HelloWorldSimple('JuanCarlos', 'Moratalla', 'Campello')
+                    HelloWorldSimple(1)
+                    echo "-------------------------------"
+                    echo "Numero de build --->  $env.BUILD_NUMBER"
+                    echo "-------------------------------"
+                    helloWorld(name: "Juan Carlos", dayOfWeek: "Viernes")
+                    sh "pwd"
+                    sh "ls"
+                    sh "cat hello_world.txt"
+                    sh "pwd"
                 }
-                switchCaseVersion(ENTORNO)
             }
+            stage('Read File') {
+                steps {
+                    sh "cat release.yml"
+                    echo """--
+                    --
+                    --
+                    --"""
+                    echo "La version utilizada es : "
+                    sh ("grep ${VERSION} release.yml")
+                }
+            }
+            stage('Read File Libreria') {
+                steps {
+                    echo "Llamada librería"
+                    catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', catchInterruptions: true) {
+                    timeout(time: 2, unit: 'MINUTES') {
+                        ENTORNO = input(message: 'Elige el entorno',
+                            parameters: [
+                            [$class : 'ChoiceParameterDefinition',
+                            choices: ['INT', 'PRE', 'PRO'].join('\n'),
+                            name   : 'Please, choose selection']
+                        ])
+                    }
+                    switchCaseVersion(ENTORNO)
+                }
+            }
+            
         }
-        
     }
-
 
     post{
         always{
