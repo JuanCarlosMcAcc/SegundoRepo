@@ -33,6 +33,7 @@ pipeline {
             steps {
                 echo "Llamada librería"
                 switchCaseVersion(${VERSION})
+                echo "Hello :D"
             }
         }
     }
