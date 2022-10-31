@@ -35,7 +35,7 @@ pipeline {
             }
             stage('Read File Libreria') {
                 environment {
-                    env.ENTORNO = ''
+                    env.ENTORNO = " "
                 }
                 steps {
                     echo "Llamada librería"
@@ -44,7 +44,7 @@ pipeline {
                         env.ENTORNO = input(message: 'Elige el entorno de produccion',
                             parameters: [
                             [$class : 'ChoiceParameterDefinition',
-                            choices: ['INT', 'PRE', 'PRO'].join('\n'),
+                            choices: ["INT", "PRE", "PRO"].join('\n'),
                             name   : 'Please, choose selection']
                         ])
                     }
