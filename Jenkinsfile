@@ -40,7 +40,8 @@ pipeline {
                 }
                 steps {
                     echo "Llamada librería"
-                        switchCaseVersion(inputEnv())
+                    ENTORNO = inputEnv()
+                    switchCaseVersion(ENTORNO)
                     }
                 }
         }
