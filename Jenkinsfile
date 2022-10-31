@@ -34,11 +34,9 @@ pipeline {
                     sh ("grep ${VERSION} release.yml")
                 }
             }
-            stage('Read File Libreria') {
-                environment {
-                    ENTORNO = " "
-                }
+            stage('Read File Libreria') {   
                 steps {
+                    def ENTORNO = " "
                     echo "Llamada librería"
                     ENTORNO = inputEnv()
                     switchCaseVersion(ENTORNO)
