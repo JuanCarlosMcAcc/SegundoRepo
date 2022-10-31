@@ -35,20 +35,20 @@ pipeline {
             }
             stage('Read File Libreria') {
                 environment {
-                    env.ENTORNO = " "
+                    ENTORNO = " "
                 }
                 steps {
                     echo "Llamada librería"
                     catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', catchInterruptions: true) {
                     timeout(time: 2, unit: 'MINUTES') {
-                        env.ENTORNO = input(message: 'Elige el entorno de produccion',
+                        ENTORNO = input(message: 'Elige el entorno de produccion',
                             parameters: [
                             [$class : 'ChoiceParameterDefinition',
                             choices: ["INT", "PRE", "PRO"].join('\n'),
                             name   : 'Please, choose selection']
                         ])
                     }
-                    switchCaseVersion(env.ENTORNO)
+                    switchCaseVersion(ENTORNO)
                 }
             }
             
