@@ -32,7 +32,7 @@ pipeline {
         stage('Read File Libreria') {
             steps {
                 echo "Llamada librería"
-                switchCaseVersion(${VERSION})
+                switchCaseVersion('0.0.5')
             }
         }
     }
