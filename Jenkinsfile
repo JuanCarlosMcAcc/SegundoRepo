@@ -37,7 +37,7 @@ pipeline {
             stage('Read File Libreria') {   
                 steps { 
                         // script{
-                        def ENTORNO = "INT"
+                        ENTORNO = "INT"
                         echo "Llamada librería..."
                         ENTORNO = inputEnv()
                         // ENTORNO = "INT"
