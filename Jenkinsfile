@@ -42,7 +42,7 @@ pipeline {
                         // script{
                         // ENTORNO = "INT"
                         echo "Llamada librería..."
-                        ENTORNO = inputEnv()
+                        env.ENTORNO = inputEnv()
                         // ENTORNO = "INT"
                         switchCaseVersion(ENTORNO)
                         // }
