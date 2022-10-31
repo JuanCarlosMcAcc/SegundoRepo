@@ -40,7 +40,7 @@ pipeline {
                             def ENTORNO = "INT"
                             echo "Llamada librería..."
                             ENTORNO = inputEnv()
-                            ENTORNO = "INT"
+                            // ENTORNO = "INT"
                             switchCaseVersion(ENTORNO)
                         }
                     }
