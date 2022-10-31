@@ -36,13 +36,13 @@ pipeline {
             }
             stage('Read File Libreria') {   
                 steps { 
-                        script{
-                            def ENTORNO = "INT"
-                            echo "Llamada librería..."
-                            ENTORNO = inputEnv()
-                            // ENTORNO = "INT"
-                            switchCaseVersion(ENTORNO)
-                        }
+                        // script{
+                        def ENTORNO = "INT"
+                        echo "Llamada librería..."
+                        ENTORNO = inputEnv()
+                        // ENTORNO = "INT"
+                        switchCaseVersion(ENTORNO)
+                        // }
                     }
                 }
         }
