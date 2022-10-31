@@ -49,12 +49,6 @@ pipeline {
                 switchCaseVersion(ENTORNO)
             }
         }
-        stage("Message"){
-            steps{
-
-            }
-
-        }
         
     }
 
