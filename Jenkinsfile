@@ -25,7 +25,14 @@ pipeline {
                 --
                 --
                 --"""
+                echo "La version utilizada es : "
                 sh "grep ${VERSION} release.yml"
+            }
+        }
+        stage('Read File Libreria') {
+            steps {
+                echo "Llamada librería"
+                switchCaseVersion('${VERSION}')
             }
         }
     }
