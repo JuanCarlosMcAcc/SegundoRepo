@@ -38,7 +38,7 @@ pipeline {
                 steps { 
                         script{
                             def ENTORNO = " "
-                            echo "Llamada librería"
+                            echo "Llamada librería..."
                             ENTORNO = inputEnv()
                             switchCaseVersion(ENTORNO)
                         }
