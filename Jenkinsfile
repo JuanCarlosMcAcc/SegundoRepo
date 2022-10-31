@@ -2,10 +2,10 @@
 pipeline {
     agent any
     environment{
-        env.NOMBRE = 'Juan Carlos'
-        env.MI_CARPETA = 'CarpetaJC'
-        env.VERSION = '0.0.5'
-        env.ENTORNO = 'INT'
+        NOMBRE = 'Juan Carlos'
+        MI_CARPETA = 'CarpetaJC'
+        VERSION = '0.0.5'
+        ENTORNO = 'INT'
     }  
     stages {
         stage('verify') {
@@ -38,7 +38,7 @@ pipeline {
         stage('Read File Libreria') {
             steps {
                 echo "Llamada librería"
-                switchCaseVersion(env.ENTORNO)
+                switchCaseVersion(ENTORNO)
             }
         }
     }
