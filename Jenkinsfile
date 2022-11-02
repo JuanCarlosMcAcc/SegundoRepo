@@ -40,7 +40,7 @@ pipeline {
                     echo "Llamada librería..."
                     
                     // ENTORNO = "INT"
-                    switchCaseVersion(inputEnv())
+                    echo "La version utilizada es: "  + switchCaseVersion(inputEnv())
                     // }
                 }
             }
