@@ -38,7 +38,7 @@ pipeline {
                     // script{
                     // ENTORNO = "INT"
                     echo "Llamada librería..."
-                    VERSION = switchCaseVersion(inputEnv())
+                    ${VERSION} = switchCaseVersion(inputEnv())
                     // ENTORNO = "INT"
                     echo "La version utilizada es: ${VERSION}"
                     // }
