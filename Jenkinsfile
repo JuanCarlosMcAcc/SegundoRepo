@@ -43,7 +43,7 @@ pipeline {
             stage('Ejercicio 2'){
                 steps{
                     script{
-                        def archivo = readYaml(file:'yml')
+                        def archivo = readYaml(file:'release.yml')
                         println archivo.getClass.getName()
                     }
                 }
