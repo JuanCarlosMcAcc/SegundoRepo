@@ -44,7 +44,7 @@ pipeline {
                 steps{
                     script{
                         def archivo = readYaml(file:'release.yml')
-                        println archivo.getClass.getName()
+                        println archivo.getClass().getName()
                     }
                 }
             }
