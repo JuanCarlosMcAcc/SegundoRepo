@@ -35,13 +35,17 @@ pipeline {
             }
             stage('Read File Libreria') {   
                 steps { 
-                    // script{
-                    // ENTORNO = "INT"
                     echo "Llamada librería..."
                     
-                    // ENTORNO = "INT"
                     switchCaseVersion(inputEnv())
-                    // }
+                }
+            }
+            stage('Ejercicio 2'){
+                steps{
+                    script{
+                        def archivo = readYaml(file:'yml')
+                        println archivo.getClass.getName()
+                    }
                 }
             }
         }
