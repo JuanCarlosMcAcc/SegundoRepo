@@ -47,7 +47,7 @@ pipeline {
                         println archivo.getClass().getName()
                         List<String> keys = new ArrayList<>(archivo.keySet());
                         println keys
-                        List<String> values = new ArrayList<>(archivo.getValue());
+                        List<String> values = new ArrayList<>(archivo.values());
                         print values
                     }
                 }
