@@ -46,11 +46,7 @@ pipeline {
                         def archivo = readYaml(file:'release.yml')
                         println archivo.getClass().getName()
                         List<String> keys = new ArrayList<>(archivo.keySet());
-                        println keys
                         List<String> values = new ArrayList<>(archivo.values());
-                        print values
-                        print values[0]
-                        print values[1]
                         print " Las version es -> " + values[2]
                         for (int i = 0; i < values.size(); i++){
                             println "La version de " + keys[i] +" es "+ values[i]
