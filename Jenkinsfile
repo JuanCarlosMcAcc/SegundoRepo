@@ -47,7 +47,9 @@ pipeline {
                         println archivo.getClass().getName()
                         List<String> keys = new ArrayList<>(archivo.keySet());
                         List<String> values = new ArrayList<>(archivo.values());
-                        print " Las version es -> " + values[2]
+                        println "-----"
+                        print " Las version es -> " + archivo.values([1])
+                        println "-----"
                         for (int i = 0; i < values.size(); i++){
                             println "La version de " + keys[i] +" es "+ values[i]
                         }
