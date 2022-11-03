@@ -51,7 +51,7 @@ pipeline {
                         print values
                         print values[0]
                         print values[1]
-                        print values[2]
+                        print " Las version es -> " + values[2]
                     }
                 }
             }
