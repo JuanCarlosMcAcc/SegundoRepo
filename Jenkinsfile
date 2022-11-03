@@ -37,7 +37,7 @@ pipeline {
                 steps { 
                     echo "Llamada librería..."
                     
-                    switchCaseVersion(inputEnv())
+                    // switchCaseVersion(inputEnv())
                 }
             }
             stage('Ejercicio 2'){
