@@ -49,6 +49,9 @@ pipeline {
                         println keys
                         List<String> values = new ArrayList<>(archivo.values());
                         print values
+                        print values[0]
+                        print values[1]
+                        print values[2]
                     }
                 }
             }
