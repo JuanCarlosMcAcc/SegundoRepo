@@ -52,6 +52,9 @@ pipeline {
                         print values[0]
                         print values[1]
                         print " Las version es -> " + values[2]
+                        for (int i = 0; i < keys.size(); i++){
+                            println "La version de" keys[i] " es " values[i]
+                        }
                     }
                 }
             }
