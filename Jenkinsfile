@@ -60,9 +60,9 @@ pipeline {
             stage('Ejercicio 3'){
                 steps{
                     script{
-                        def archivo = readYaml(file:'release.yml')
-                        List<String> keys = new ArrayList<>(archivo.keySet());
-                        List<String> values = new ArrayList<>(archivo.values());
+                        // def archivo = readYaml(file:'release.yml')
+                        // List<String> keys = new ArrayList<>(archivo.keySet());
+                        // List<String> values = new ArrayList<>(archivo.values());
                         // values[values.indexOf('0.0.5')] = '1.1.0'
                         // print values
                         // print archivo
