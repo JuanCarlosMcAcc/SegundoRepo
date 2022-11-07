@@ -60,8 +60,7 @@ pipeline {
                 steps{
                     script{
                         File file1 = new File("release.yml")
-                        text = file1.getText
-                        println file1.text
+                        println file1
                     }
                 }
             }
