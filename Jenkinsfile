@@ -66,10 +66,11 @@ pipeline {
                         // print values
                         // print archivo
                         // writeYaml file: 'release1.yml', data : values, StandardCopyOption.REPLACE_EXISTING
-                        File file = new File("release.yml")
-                        bf = new BufferedWriter(new FileWriter(file))
-                        bf.write("Hola :")
-                        bf.flush();
+                        
+                        // File file = new File("release.yml")
+                        // bf = new BufferedWriter(new FileWriter(file))
+                        // bf.write("Hola :")
+                        // bf.flush();
                         sh "cat release.yml"
                     }
                 }
