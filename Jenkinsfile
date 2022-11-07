@@ -59,8 +59,8 @@ pipeline {
             stage('Ejercicio 3'){
                 steps{
                     script{
-                        def file1 = readFile 'release.yml'
-                        println file1.readLine(1)
+                        def file1 = File 'release.yml'
+                        println file1
                     }
                 }
             }
