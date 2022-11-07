@@ -65,6 +65,7 @@ pipeline {
                         values[values.indexOf('0.0.5')] = '1.1.0'
 
                         writeYaml file: 'release1.yml', data : "Hola"
+                        cat release1.yml
 
                     }
                 }
