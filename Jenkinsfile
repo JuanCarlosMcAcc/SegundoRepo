@@ -56,15 +56,6 @@ pipeline {
                     }
                 }
             }
-            stage('Ejercicio 3'){
-                steps{
-                    script{
-                        File file1 = new File("release.yml")
-                        text = file1.getText('UTF-8')
-                        println file1.text
-                    }
-                }
-            }
         }
     }
 
