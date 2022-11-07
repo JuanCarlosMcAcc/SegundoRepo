@@ -45,6 +45,7 @@ pipeline {
                     script{
                         def archivo = readYaml(file:'release.yml')
                         println archivo.getClass().getName()
+                        sh "cat release.yml"
                         List<String> keys = new ArrayList<>(archivo.keySet());
                         List<String> values = new ArrayList<>(archivo.values());
                         println "-----"
