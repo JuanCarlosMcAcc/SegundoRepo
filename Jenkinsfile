@@ -60,7 +60,7 @@ pipeline {
                 steps{
                     script{
                         def file1 = readFile 'release.yml'
-                        println file1
+                        println file1.readLine(1)
                     }
                 }
             }
