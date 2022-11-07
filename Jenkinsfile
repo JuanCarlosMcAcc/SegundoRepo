@@ -62,13 +62,15 @@ pipeline {
                         def archivo = readYaml(file:'release.yml')
                         List<String> keys = new ArrayList<>(archivo.keySet());
                         List<String> values = new ArrayList<>(archivo.values());
-                        values[values.indexOf('0.0.5')] = '1.1.0'
-                        print values
-                        print archivo
+                        // values[values.indexOf('0.0.5')] = '1.1.0'
+                        // print values
+                        // print archivo
                         // writeYaml file: 'release1.yml', data : values, StandardCopyOption.REPLACE_EXISTING
-                        // writeYaml file: 'release1.yml', data : keys, StandardCopyOption.REPLACE_EXISTING
-
-                        sh "cat release1.yml"
+                        File file = new File("release.yml")
+                        bf = new BufferedWriter(new FileWriter(file))
+                        bf.write("Hola :")
+                        bf.flush();
+                        sh "cat release.yml"
                     }
                 }
             }
