@@ -59,7 +59,7 @@ pipeline {
             stage('Ejercicio 3'){
                 steps{
                     script{
-                        File file1 = new File("release.yml")
+                        def file1 = readFile 'release.yml'
                         println file1
                     }
                 }
