@@ -5,7 +5,7 @@ pipeline {
             NOMBRE = 'Juan Carlos'
             MI_CARPETA = 'CarpetaJC'
             VERSION = 'INT'
-        }  
+        }
         stages {
             stage('verify') {
                 steps {
@@ -53,6 +53,15 @@ pipeline {
                         for (int i = 0; i < values.size(); i++){
                             println "La version de " + keys[i] +" es "+ values[i]
                         }
+                    }
+                }
+            }
+            stage('Ejercicio 3'){
+                steps{
+                    script{
+                        File file1 = new File("release.yml")
+                        text = file1.getText('UTF-8')
+                        println file1.text
                     }
                 }
             }
