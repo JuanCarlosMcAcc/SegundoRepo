@@ -63,7 +63,7 @@ pipeline {
                         List<String> keys = new ArrayList<>(archivo.keySet());
                         List<String> values = new ArrayList<>(archivo.values());
                         values[values.indexOf('0.0.5')] = '1.1.0'
-
+                        print values
                         writeYaml file: 'release1.yml', data : "Hola"
                         sh "cat release1.yml"
                     }
