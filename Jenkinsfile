@@ -66,7 +66,8 @@ pipeline {
                         values[values.indexOf('0.0.5')] = '1.1.0'
                         print values
                         print archivo
-                        // writeYaml file: 'release1.yml', data : values, StandardCopyOption.REPLACE_EXISTING
+                        writeYaml file: 'release1.yml', data : values
+                        sh "cat release1.yml"
                         
                         // File file = new File("release.yml")
                         // FileOutputStream fos=new FileOutputStream(file);
@@ -76,7 +77,6 @@ pipeline {
                         // oos.flush();
                         // fos.close();
                         // sh "cat release.yml"
-
                     }
                 }
             }
