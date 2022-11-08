@@ -66,7 +66,11 @@ pipeline {
                         values[values.indexOf('0.0.5')] = '1.1.0'
                         print values
                         print archivo
-                        writeYaml file: 'release1.yml', data : " $keys  : $values"
+                        
+                        for (int i = 0; i < values.size(); i++){
+                            // println "La version de " + keys[i] +" es "+ values[i]
+                            writeYaml file: 'release1.yml', data : " $keys[i]  : $values[i]"
+                        }
                         sh "cat release1.yml"
 
                         // File file = new File("release.yml")
