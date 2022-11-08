@@ -67,11 +67,11 @@ pipeline {
                         print values
                         print archivo
                         
-                        for (int i = 0; i < values.size(); i++){
-                            // println "La version de " + keys[i] +" es "+ values[i]
-                            writeYaml file: 'release1.yml', data :  values[i]
-                        }
-                        sh "cat release1.yml"
+                        // for (int i = 0; i < values.size(); i++){
+                        //     // println "La version de " + keys[i] +" es "+ values[i]
+                        //     writeYaml file: 'release1.yml', data :  values[i]
+                        // }
+                        // sh "cat release1.yml"
 
                         // File file = new File("release.yml")
                         // FileOutputStream fos=new FileOutputStream(file);
