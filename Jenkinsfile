@@ -60,12 +60,12 @@ pipeline {
             stage('Ejercicio 3'){
                 steps{
                     script{
-                        // def archivo = readYaml(file:'release.yml')
-                        // List<String> keys = new ArrayList<>(archivo.keySet());
-                        // List<String> values = new ArrayList<>(archivo.values());
-                        // values[values.indexOf('0.0.5')] = '1.1.0'
-                        // print values
-                        // print archivo
+                        def archivo = readYaml(file:'release.yml')
+                        List<String> keys = new ArrayList<>(archivo.keySet());
+                        List<String> values = new ArrayList<>(archivo.values());
+                        values[values.indexOf('0.0.5')] = '1.1.0'
+                        print values
+                        print archivo
                         // writeYaml file: 'release1.yml', data : values, StandardCopyOption.REPLACE_EXISTING
                         
                         // File file = new File("release.yml")
@@ -77,15 +77,6 @@ pipeline {
                         // fos.close();
                         // sh "cat release.yml"
 
-
-                        def File file = File("release.yml")
-                        def FileOutputStream fos= FileOutputStream(file);
-                        def ObjectOutputStream oos= ObjectOutputStream(fos);
-
-                        oos.write("Hola :")
-                        oos.flush();
-                        fos.close();
-                        sh "cat release.yml"
                     }
                 }
             }
