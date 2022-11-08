@@ -67,9 +67,13 @@ pipeline {
                         print values
                         print archivo
                         
+                        sh "rm release.yml"
+
                         archivo.put("APP_JAVA-INT","1.1.0")
                         print archivo
-
+                        writeYaml file: 'release.yml', data :  archivo
+                        
+                        sh "cat release.yml"
 
                         // for (int i = 0; i < values.size(); i++){
                         //     // println "La version de " + keys[i] +" es "+ values[i]
