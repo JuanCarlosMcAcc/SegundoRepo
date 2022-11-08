@@ -68,9 +68,19 @@ pipeline {
                         // print archivo
                         // writeYaml file: 'release1.yml', data : values, StandardCopyOption.REPLACE_EXISTING
                         
-                        File file = new File("release.yml")
-                        FileOutputStream fos=new FileOutputStream(file);
-                        ObjectOutputStream oos=new ObjectOutputStream(fos);
+                        // File file = new File("release.yml")
+                        // FileOutputStream fos=new FileOutputStream(file);
+                        // ObjectOutputStream oos=new ObjectOutputStream(fos);
+
+                        // oos.write("Hola :")
+                        // oos.flush();
+                        // fos.close();
+                        // sh "cat release.yml"
+
+
+                        def File file = File("release.yml")
+                        def FileOutputStream fos= FileOutputStream(file);
+                        def ObjectOutputStream oos= ObjectOutputStream(fos);
 
                         oos.write("Hola :")
                         oos.flush();
