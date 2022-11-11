@@ -96,31 +96,33 @@ pipeline {
             stage("Pruebas Script"){
                 steps{
                     echo "Prueba"
-                    script{
-                        switch(selectorScript()){
-                            case "script1.sh":
-                                sh "bash script1.sh ${CONTADOR}"
-                                break
-                            case "script2.sh":
-                                sh "bash script2.sh ${NOMBRE}"
-                                break
-                            default:
-                                echo "Error"
-                        }
-                    }
+                    selectorScript( ${NOMBRE} , ${CONTADOR} ) 
+
+                    // script{
+                    //     switch(selectorScript()){
+                    //         case "script1.sh":
+                    //             sh "bash script1.sh ${CONTADOR}"
+                    //             break
+                    //         case "script2.sh":
+                    //             sh "bash script2.sh ${NOMBRE}"
+                    //             break
+                    //         default:
+                    //             echo "Error"
+                    //     }
+                    // }
                 }
             }
-            stage("Input"){
-                steps{
-                    script{
-                        nombreUsuario = input message: 'Please enter the username',
-                                parameters: [string(defaultValue: '',
-                                            description: '',
-                                            name: 'Username')]
-                        echo "${nombreUsuario}"
-                    }
-                }
-            }
+            // stage("Input"){
+            //     steps{
+            //         script{
+            //             nombreUsuario = input message: 'Please enter the username',
+            //                     parameters: [string(defaultValue: '',
+            //                                 description: '',
+            //                                 name: 'Username')]
+            //             echo "${nombreUsuario}"
+            //         }
+            //     }
+            // }
         }
     }
 
