@@ -5,6 +5,7 @@ pipeline {
             NOMBRE = 'Juan Carlos'
             MI_CARPETA = 'CarpetaJC'
             VERSION = 'INT'
+            CONTADOR = 12
         }
         stages {
             stage('verify') {
@@ -94,7 +95,7 @@ pipeline {
             stage("Pruebas Script"){
                 steps{
                     sh "ls"
-                    sh "bash script1.sh"
+                    sh "bash script1.sh ${CONTADOR}"
                 }
             }
         }
