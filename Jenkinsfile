@@ -111,11 +111,14 @@ pipeline {
             }
             stage("Input"){
                 steps{
-                    nombreUsuario = input message: 'Please enter the username',
-                            parameters: [string(defaultValue: '',
-                                        description: '',
-                                        name: 'Username')]
-                    echo "${nombreUsuario}"
+                    script{
+                        nombreUsuario = input message: 'Please enter the username',
+                                parameters: [string(defaultValue: '',
+                                            description: '',
+                                            name: 'Username')]
+                        echo "${nombreUsuario}"
+                    }
+
                 }
             }
         }
