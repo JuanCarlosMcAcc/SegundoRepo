@@ -101,7 +101,7 @@ pipeline {
                     // sh "bash ${selector}"
 
                     script{
-                        switch(selector){
+                        switch(${selector}){
                             case "Script Contador":
                                 sh "bash script1.sh ${CONTADOR}"
                                 break
