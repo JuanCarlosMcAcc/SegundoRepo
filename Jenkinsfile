@@ -96,7 +96,7 @@ pipeline {
                 steps{
                     sh "ls"
                     sh "bash script1.sh ${CONTADOR}"
-                    def script = selectorScript()
+                    script = selectorScript()
                     sh "bash ${script}"
                 }
             }
