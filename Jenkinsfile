@@ -8,6 +8,12 @@ pipeline {
             CONTADOR = 12
             // selector = selectorScript()
         }
+        parameters{
+            nombreUsuario = input message: 'Please enter the username',
+                            parameters: [string(defaultValue: '',
+                                        description: '',
+                                        name: 'Username')]
+        }
         stages {
             stage('verify') {
                 steps {
@@ -68,11 +74,11 @@ pipeline {
                         print values
                         print archivo
                         
-                        sh "rm release.yml"
+                        // sh "rm release.yml"
 
                         archivo.put("APP_JAVA-INT","1.1.0")
                         print archivo
-                        writeYaml file: 'release.yml', data :  archivo
+                        writeYaml file: 'release.yml', data :  archivo, overwrite : true
                         
                         sh "cat release.yml"
 
@@ -111,17 +117,17 @@ pipeline {
                     // }
                 }
             }
-            // stage("Input"){
-            //     steps{
-            //         script{
-            //             nombreUsuario = input message: 'Please enter the username',
-            //                     parameters: [string(defaultValue: '',
-            //                                 description: '',
-            //                                 name: 'Username')]
-            //             echo "${nombreUsuario}"
-            //         }
-            //     }
-            // }
+            stage("Input"){
+                steps{
+                    script{
+                        // nombreUsuario = input message: 'Please enter the username',
+                        //         parameters: [string(defaultValue: '',
+                        //                     description: '',
+                        //                     name: 'Username')]
+                        echo "${nombreUsuario}"
+                    }
+                }
+            }
         }
     }
 
