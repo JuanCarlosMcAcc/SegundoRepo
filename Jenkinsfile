@@ -95,23 +95,27 @@ pipeline {
             }
             stage("Pruebas Script"){
                 steps{
-                    // sh "ls"
-                    // sh "bash script1.sh ${CONTADOR}"
-                    
-                    // sh "bash ${selector}"
-                    // echo "Valor ---> ${selector}"
-                    script{
-                        switch(selectorScript()){
-                            case "script1.sh":
-                                sh "bash script1.sh ${CONTADOR}"
-                                break
-                            case "script2.sh":
-                                sh "bash script2.sh ${NOMBRE}"
-                                break
-                            default:
-                                echo "Error"
-                        }
-                    }
+                    // script{
+                    //     switch(selectorScript()){
+                    //         case "script1.sh":
+                    //             sh "bash script1.sh ${CONTADOR}"
+                    //             break
+                    //         case "script2.sh":
+                    //             sh "bash script2.sh ${NOMBRE}"
+                    //             break
+                    //         default:
+                    //             echo "Error"
+                    //     }
+                    // }
+                }
+            }
+            stage("Input"){
+                steps{
+                    nombreUsuario = input message: 'Please enter the username',
+                            parameters: [string(defaultValue: '',
+                                        description: '',
+                                        name: 'Username')]
+                    echo "${nombreUsuario}"
                 }
             }
         }
