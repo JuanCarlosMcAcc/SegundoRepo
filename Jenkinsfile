@@ -99,7 +99,7 @@ pipeline {
             stage("Pruebas Script"){
                 steps{
                     echo "Prueba"
-                    selectorScript( ${params.NOMBRE_USU} , env.CONTADOR ) 
+                    selectorScript( "MANOLO" , env.CONTADOR ) 
                     // script{
                     //     switch(selectorScript()){
                     //         case "script1.sh":
