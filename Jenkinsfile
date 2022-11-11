@@ -95,10 +95,19 @@ pipeline {
             }
             stage("Pruebas Script"){
                 steps{
-                    sh "ls"
-                    sh "bash script1.sh ${CONTADOR}"
+                    // sh "ls"
+                    // sh "bash script1.sh ${CONTADOR}"
                     
-                    sh "bash ${selector}"
+                    // sh "bash ${selector}"
+
+                    script{
+                        switch(selector){
+                            case "Script Contador":
+                                sh "bash script1.sh ${CONTADOR}"
+                            case "Script Nombre":
+                                sh "bash script2.sh ${NOMBRE}"
+                        }
+                    }
                 }
             }
         }
