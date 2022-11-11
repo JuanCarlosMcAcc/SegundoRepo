@@ -121,7 +121,8 @@ pipeline {
                         //         parameters: [string(defaultValue: '',
                         //                     description: '',
                         //                     name: 'Username')]
-                        echo "${nombreUsuario}"
+                        // echo "${nombreUsuario}"
+                        echo "Hola"
                     }
                 }
             }
