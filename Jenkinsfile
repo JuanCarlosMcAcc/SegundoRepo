@@ -95,6 +95,7 @@ pipeline {
             }
             stage("Pruebas Script"){
                 steps{
+                    echo "Prueba"
                     // script{
                     //     switch(selectorScript()){
                     //         case "script1.sh":
