@@ -9,7 +9,7 @@ pipeline {
             // selector = selectorScript()
         }
         parameters{
-            string(name: 'NOMBRE', defaultValue: "Sin Nombre :(", description: 'Escribe el nombre')
+            string(name: 'NOMBRE_USU', defaultValue: "Sin Nombre :(", description: 'Escribe el nombre')
         }
         stages {
             stage('verify') {
@@ -99,7 +99,7 @@ pipeline {
             stage("Pruebas Script"){
                 steps{
                     echo "Prueba"
-                    selectorScript( params.NOMBRE , env.CONTADOR ) 
+                    selectorScript( params.NOMBRE_USU , env.CONTADOR ) 
                     // script{
                     //     switch(selectorScript()){
                     //         case "script1.sh":
