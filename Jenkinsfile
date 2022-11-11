@@ -9,7 +9,7 @@ pipeline {
             // selector = selectorScript()
         }
         parameters{
-            string(name: 'PERSON', defaultValue: '', description: 'Escribe el nombre')
+            string(name: 'NOMBRE', defaultValue: '', description: 'Escribe el nombre')
         }
         stages {
             stage('verify') {
@@ -122,7 +122,7 @@ pipeline {
                         //                     description: '',
                         //                     name: 'Username')]
                         // echo "${nombreUsuario}"
-                        echo "Hola"
+                        echo "Hola ${params.NOMBRE}"
                     }
                 }
             }
