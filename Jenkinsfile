@@ -1,16 +1,17 @@
 @Library('libreria-jc@main') _
 pipeline {
         agent any
+        parameters{
+            string(name: 'NOMBRE_USU', defaultValue: "Sin Nombre :(", description: 'Escribe el nombre')
+        }
         environment{
-            NOMBRE = 'Juan Carlos'
+            // NOMBRE = 'Juan Carlos'
             MI_CARPETA = 'CarpetaJC'
             VERSION = 'INT'
             CONTADOR = 12
             // selector = selectorScript()
         }
-        parameters{
-            string(name: 'NOMBRE_USU', defaultValue: "Sin Nombre :(", description: 'Escribe el nombre')
-        }
+
         stages {
             stage('verify') {
                 steps {
