@@ -97,7 +97,6 @@ pipeline {
                 steps{
                     echo "Prueba"
                     selectorScript( env.NOMBRE , 12 ) 
-
                     // script{
                     //     switch(selectorScript()){
                     //         case "script1.sh":
