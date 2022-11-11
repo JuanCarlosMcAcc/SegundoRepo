@@ -102,10 +102,10 @@ pipeline {
                     echo "Valor ---> ${selector}"
                     script{
                         switch(${selector}){
-                            case "Script Contador":
+                            case "script1.sh":
                                 sh "bash script1.sh ${CONTADOR}"
                                 break
-                            case "Script Nombre":
+                            case "script2.sh":
                                 sh "bash script2.sh ${NOMBRE}"
                                 break
                             default:
