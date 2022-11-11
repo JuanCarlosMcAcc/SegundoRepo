@@ -9,10 +9,7 @@ pipeline {
             // selector = selectorScript()
         }
         parameters{
-            nombreUsuario = input message: 'Please enter the username',
-                            parameters: [string(defaultValue: '',
-                                        description: '',
-                                        name: 'Username')]
+            string(name: 'PERSON', defaultValue: '', description: 'Escribe el nombre')
         }
         stages {
             stage('verify') {
