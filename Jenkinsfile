@@ -96,8 +96,8 @@ pipeline {
                 steps{
                     sh "ls"
                     sh "bash script1.sh ${CONTADOR}"
-                    script = selectorScript()
-                    sh "bash ${script}"
+                    script_1 = selectorScript()
+                    sh "bash ${script_1}"
                 }
             }
         }
