@@ -6,6 +6,7 @@ pipeline {
             MI_CARPETA = 'CarpetaJC'
             VERSION = 'INT'
             CONTADOR = 12
+            selector = selectorScript()
         }
         stages {
             stage('verify') {
@@ -96,8 +97,8 @@ pipeline {
                 steps{
                     sh "ls"
                     sh "bash script1.sh ${CONTADOR}"
-                    script_1 = selectorScript()
-                    sh "bash ${script_1}"
+                    
+                    sh "bash ${selector}"
                 }
             }
         }
