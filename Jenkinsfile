@@ -104,8 +104,12 @@ pipeline {
                         switch(selector){
                             case "Script Contador":
                                 sh "bash script1.sh ${CONTADOR}"
+                                break
                             case "Script Nombre":
                                 sh "bash script2.sh ${NOMBRE}"
+                                break
+                            default:
+                                echo "Error"
                         }
                     }
                 }
