@@ -99,7 +99,7 @@ pipeline {
                     // sh "bash script1.sh ${CONTADOR}"
                     
                     // sh "bash ${selector}"
-
+                    echo "Valor ---> ${selector}"
                     script{
                         switch(${selector}){
                             case "Script Contador":
