@@ -9,7 +9,7 @@ pipeline {
             // selector = selectorScript()
         }
         parameters{
-            string(name: 'NOMBRE', defaultValue: '', description: 'Escribe el nombre')
+            string(name: 'NOMBRE', defaultValue: 'Sin Nombre :(', description: 'Escribe el nombre')
         }
         stages {
             stage('verify') {
