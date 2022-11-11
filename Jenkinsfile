@@ -93,6 +93,7 @@ pipeline {
             }
             stage("Pruebas Script"){
                 steps{
+                    sh "ls"
                     sh "script1.sh"
                 }
             }
