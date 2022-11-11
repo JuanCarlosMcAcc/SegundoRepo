@@ -96,18 +96,18 @@ pipeline {
             stage("Pruebas Script"){
                 steps{
                     echo "Prueba"
-                    // script{
-                    //     switch(selectorScript()){
-                    //         case "script1.sh":
-                    //             sh "bash script1.sh ${CONTADOR}"
-                    //             break
-                    //         case "script2.sh":
-                    //             sh "bash script2.sh ${NOMBRE}"
-                    //             break
-                    //         default:
-                    //             echo "Error"
-                    //     }
-                    // }
+                    script{
+                        switch(selectorScript()){
+                            case "script1.sh":
+                                sh "bash script1.sh ${CONTADOR}"
+                                break
+                            case "script2.sh":
+                                sh "bash script2.sh ${NOMBRE}"
+                                break
+                            default:
+                                echo "Error"
+                        }
+                    }
                 }
             }
             stage("Input"){
@@ -119,7 +119,6 @@ pipeline {
                                             name: 'Username')]
                         echo "${nombreUsuario}"
                     }
-
                 }
             }
         }
