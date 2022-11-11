@@ -96,7 +96,7 @@ pipeline {
             stage("Pruebas Script"){
                 steps{
                     echo "Prueba"
-                    selectorScript( ${NOMBRE} , ${CONTADOR} ) 
+                    selectorScript( NOMBRE , CONTADOR ) 
 
                     // script{
                     //     switch(selectorScript()){
