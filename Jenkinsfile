@@ -91,6 +91,11 @@ pipeline {
                     }
                 }
             }
+            stage("Pruebas Script"){
+                steps{
+                    sh "script1.sh"
+                }
+            }
         }
     }
 
